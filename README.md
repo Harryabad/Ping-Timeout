@@ -1,5 +1,5 @@
 # Ping-Timout
-Ping-Timeout Logs when 'Request times out' occur.
+Ping-Timeout Logs when 'Request timed out' occurs.
 
 Using pip install pythonping
 & pip install socket  
