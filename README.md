@@ -1,4 +1,4 @@
-# Ping-Timout
+# Ping-Timeout
 Ping-Timeout Logs when 'Request timed out' occurs.
 
 Using pip install pythonping
