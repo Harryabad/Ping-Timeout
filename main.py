@@ -15,7 +15,7 @@ try:
     # Create a new txt to store our failed ping data
     f = open("Ping Timeouts.txt", "w")
 
-    # Not needed but if there are 100 instances of RTOs, program will close
+    # Not needed but if there are 30 instances of RTOs, program will close
     count = 0
 
     wifi = speedtest.Speedtest()
@@ -43,7 +43,7 @@ try:
             f.write("\n")
             
             count += 1
-            if count >50:
+            if count >30:
                 break
 
         time.sleep(.7500)
@@ -56,5 +56,5 @@ except KeyboardInterrupt:
     f.write(f"Wifi Download speed: {(int(wifi.download())//1000000)} Mbps\n")
     f.write(f"Wifi Upload speed: {(int(wifi.upload())//1000000)} Mbps\n")
     print("Speedtest Complete \n")
-    print("Program Closed")
+    print(f"Program Executed at {datetime.datetime.now()}")
     f.close()
