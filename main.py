@@ -52,9 +52,6 @@ try:
 
 
 except KeyboardInterrupt:
-    f.write(f"Speedtest at {datetime.datetime.now()}\n")
-    f.write(f"Wifi Download speed: {(int(wifi.download())//1000000)} Mbps\n")
-    f.write(f"Wifi Upload speed: {(int(wifi.upload())//1000000)} Mbps\n")
-    print("Speedtest Complete \n")
+    speedtest()
     print(f"Program Executed at {datetime.datetime.now()}")
     f.close()
