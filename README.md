@@ -18,7 +18,7 @@ import time
 url = (socket.gethostbyname('google.com'))
 
 # 'Request timed out' is our catch for a failed ping
-substring = "Request timed out."
+substring = "Request timed out"
 
 # Create a new txt to store our failed ping data
 f = open("Ping Timeouts.txt", "w")
