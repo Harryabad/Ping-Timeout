@@ -2,36 +2,59 @@ import datetime
 import socket
 from pythonping import ping
 import time
+import speedtest
+import atexit
 
-# Get an IP address using socket 
-url = (socket.gethostbyname('google.com'))
+try:
+    # Get an IP address using socket 
+    url = (socket.gethostbyname('google.com'))
 
-# 'Request timed out' is our catch for a failed ping
-substring = "Request timed out"
+    # 'Request timed out' is our catch for a failed ping
+    substring = "Request timed out"
 
-# Create a new txt to store our failed ping data
-f = open("Ping Timeouts.txt", "w")
+    # Create a new txt to store our failed ping data
+    f = open("Ping Timeouts.txt", "w")
 
-# Not needed but if there are 100 instances of RTOs, program will close
-count = 0
+    # Not needed but if there are 100 instances of RTOs, program will close
+    count = 0
 
-while True:
+    wifi = speedtest.Speedtest()
 
-    # Send a ping, split data, store as string
-    ping_data = str(ping(url, out=True)).split("\n")
-
-    if substring in ping_data[0] or substring in ping_data[1] or substring in ping_data[2] or substring in ping_data[3]:
-        f.write(f"Update at {datetime.datetime.now()} \n")
-        f.write(f"{ping_data[0]}")
-        f.write(f"{ping_data[1]}")
-        f.write(f"{ping_data[2]}")
-        f.write(f"{ping_data[3]}")
-        f.write("\n")
+    def speedtest():
         
-        count += 1
-        if count == 100:
-            break
+        f.write(f"Speedtest at {datetime.datetime.now()}\n")
+        f.write(f"Wifi Download speed: {(int(wifi.download())//1000000)} Mbps\n")
+        f.write(f"Wifi Upload speed: {(int(wifi.upload())//1000000)} Mbps\n\n")
+        print("Speedtest Complete \n")
 
-    time.sleep(.7500)
+    speedtest()
 
-f.close()
+    while True:
+
+        # Send a ping, split data, store as string
+        ping_data = str(ping(url, out=True)).split("\n")
+
+        if substring in ping_data[0] or substring in ping_data[1] or substring in ping_data[2] or substring in ping_data[3]:
+            f.write(f"Update at {datetime.datetime.now()} \n")
+            f.write(f"{ping_data[0]}")
+            f.write(f"{ping_data[1]}")
+            f.write(f"{ping_data[2]}")
+            f.write(f"{ping_data[3]}")
+            f.write("\n")
+            
+            count += 1
+            if count >50:
+                break
+
+        time.sleep(.7500)
+        
+    f.close()
+
+
+except KeyboardInterrupt:
+    f.write(f"Speedtest at {datetime.datetime.now()}\n")
+    f.write(f"Wifi Download speed: {(int(wifi.download())//1000000)} Mbps\n")
+    f.write(f"Wifi Upload speed: {(int(wifi.upload())//1000000)} Mbps\n")
+    print("Speedtest Complete \n")
+    print("Program Closed")
+    f.close()

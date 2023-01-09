@@ -1,8 +1,13 @@
-Update at 2023-01-09 08:37:36.601570 
-Request timed outReply from 172.217.16.238, 29 bytes in 24.74msReply from 172.217.16.238, 29 bytes in 56.14msReply from 172.217.16.238, 29 bytes in 75.11ms
-Update at 2023-01-09 08:37:46.292099 
+Speedtest at 2023-01-09 12:13:41.657282
+Wifi Download speed: 189 Mbps
+Wifi Upload speed: 153 Mbps
+
+Update at 2023-01-09 12:14:12.606232 
 Request timed outRequest timed outRequest timed outRequest timed out
-Update at 2023-01-09 08:38:03.698496 
+Update at 2023-01-09 12:14:21.392775 
 Request timed outRequest timed outRequest timed outRequest timed out
-Update at 2023-01-09 08:38:06.510770 
-Request timed outReply from 172.217.16.238, 29 bytes in 21.19msReply from 172.217.16.238, 29 bytes in 12.93msReply from 172.217.16.238, 29 bytes in 10.61ms
+Update at 2023-01-09 12:14:26.177420 
+Request timed outRequest timed outReply from 172.217.169.14, 29 bytes in 6.36msReply from 172.217.169.14, 29 bytes in 7.99ms
+Speedtest at 2023-01-09 12:14:32.745520
+Wifi Download speed: 207 Mbps
+Wifi Upload speed: 161 Mbps
