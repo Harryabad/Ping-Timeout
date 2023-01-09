@@ -2,9 +2,9 @@
 Ping-Timeout is a program to log when 'Request timed out.' occurs.
 
 ## Installation
-Use the package manager [pip](https://pypi.org/project/pythonping/) to install pythonping.
-Use the package manager [pip](https://pypi.org/project/sockets/) to install sockets.
-Use the package manager [pip](https://pypi.org/project/speedtest-cli//) to install speedtest.
+Use the package manager [pip](https://pypi.org/project/pythonping/) to install pythonping. \newline
+Use the package manager [pip](https://pypi.org/project/sockets/) to install sockets. \newline
+Use the package manager [pip](https://pypi.org/project/speedtest-cli//) to install speedtest. \newline
 
 ## Usage
 main.py
